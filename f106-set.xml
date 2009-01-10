@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="f106-jsbsim-cnf.xml"> -->
+<PropertyList include="f106-yasim-cnf.xml">
+
+  <sim>
+    <description>Convair F106 Delta Dart</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+  </sim>
+
+</PropertyList>
+

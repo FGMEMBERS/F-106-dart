@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Fuel Quantity Gage Selector Switch -->
+
+<PropertyList>
+
+  <path>fqgss.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>visse1</object-name>
+    <object-name>visse2</object-name>
+    <object-name>selecteur</object-name>
+  </animation>
+
+</PropertyList>

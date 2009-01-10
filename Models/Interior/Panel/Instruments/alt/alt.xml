@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Altitude-Vertical Velocity Indicator -->
+
+<PropertyList>
+
+  <path>alt.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>visse1</object-name>
+    <object-name>visse2</object-name>
+    <object-name>visse3</object-name>
+    <object-name>visse4</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- SWITCH -->
+  <model>
+    <path>Aircraft/F-106-dart/Models/Interior/Panel/Instruments/divers/switch.xml</path>
+    <offsets>
+      <x-m>  0.004 </x-m>
+      <y-m> -0.010 </y-m>
+      <z-m> -0.119 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

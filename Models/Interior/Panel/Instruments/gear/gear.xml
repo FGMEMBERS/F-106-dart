@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Gear/Drag chute etc... -->
+
+<PropertyList>
+
+  <path>gear.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>visse1</object-name>
+    <object-name>visse2</object-name>
+    <object-name>manette</object-name>
+  </animation>
+
+  <!-- Tail Hook Down Button And Light -->
+  <model>
+    <path>Aircraft/F-106-dart/Models/Interior/Panel/Instruments/divers/greenalert.xml</path>
+    <offsets>
+      <x-m>  0.005 </x-m>
+      <y-m> -0.046 </y-m>
+      <z-m> -0.062 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+</PropertyList>
