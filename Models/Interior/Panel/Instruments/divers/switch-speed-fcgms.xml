@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>switch.ac</path>
+
+  <animation>
+    <object-name>switchfond</object-name>
+    <object-name>switchbutton</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>switchbutton</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>autopilot/settings/target-speed-kt</property>
+        <step>1</step>
+        <min>0.0</min>
+        <max>900.0</max>
+      </binding>
+    </action>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>autopilot/settings/target-speed-kt</property>
+        <step>-1</step>
+        <min>0.0</min>
+        <max>900.0</max>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>
