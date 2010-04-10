@@ -19,7 +19,7 @@
   <animation>
     <type>shader</type>
     <shader>chrome</shader>
-    <texture>shader.png</texture>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>intvitreA</object-name>
     <object-name>intvitreB</object-name>
   </animation>

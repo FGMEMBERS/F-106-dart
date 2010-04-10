@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--  
-     Convair F 106 Delta Dart : 2009 BARANGER Emmanuel
+
+<!-- Convair F 106 Delta Dart : 2009 BARANGER Emmanuel
+
+     Source       : http://en.wikipedia.org/wiki/F-106_Delta_Dart
      
-     Envergure    :
-     Longueur     :
-     Hauteur      :
-     Masse à vide : 10955 kg (24151 lb)
-     Moteur       :
-     Réservoirs   
-       Internes   : 2 x 2325.5 lb
-       Externes   : 2 x 4921.5 lb
+     Wingspan     : 11.67 m  ( 38.25 ft )
+     Length       : 21.55 m  ( 70.70 ft )
+     Height       :  6.18 m  ( 20.28 ft )
+     Empty weight : 11077 kg ( 24420 lb )
+     Moteur       : Pratt & Whitney J75-17 afterburning  turbojet, 24500 lbf.
+     Speed max    : Mach 2.3 ( 2455 km/h / 1325.59 kts )
+     Reservoirs   
+       Internes   : 2 x 4921.5 lb
+       Externes   : 2 x 2325.5 lb
 -->
 
-<airplane mass="24151">
+<airplane mass="24420">
 
   <!-- Approach configuration -->
-  <approach speed="150" aoa="7">
+  <approach speed="145" aoa="8" fuel="1">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.4"/>
-    <control-setting axis="/controls/engines/engine[0]/afterburner" value="0.0"/>
+    <control-setting axis="/controls/engines/engine[0]/afterburner" value="0"/>
     <control-setting axis="/controls/flight/flaps" value="0.4"/>
     <control-setting axis="/controls/gear/gear-down" value="1"/>
     <control-setting axis="/controls/flight/speedbrake" value="0"/>
@@ -25,70 +28,76 @@
   </approach>
 
   <!-- Cruise configuration.   -->
-  <cruise speed="565" alt="45000">
+  <cruise speed="1200" alt="45000" fuel="0.8">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.7"/>
-    <control-setting axis="/controls/engines/engine[0]/afterburner" value="0.0"/>
-    <control-setting axis="/controls/flight/flaps" value="0.0"/>
+    <control-setting axis="/controls/engines/engine[0]/afterburner" value="0"/>
+    <control-setting axis="/controls/flight/flaps" value="0"/>
     <control-setting axis="/controls/gear/gear-down" value="0"/>
     <control-setting axis="/controls/flight/speedbrake" value="0"/>
     <control-setting axis="/controls/flight/slats" value="0"/>
   </cruise>
 
   <!-- pilot eyepoint -->
-  <cockpit x="4.197" y="0.0" z="-0.150"/>
+  <cockpit x="4.197" y="0" z="-0.150"/>
 
-  <fuselage ax="10.728" ay="0" az="-0.795" bx="-11.296" by="0" bz="-0.795" width="2.263" midpoint= "0.7" />
+  <fuselage ax="9.282" ay="0" az="-1.474" bx="-10.213" by="0" bz="-0.429" width="1.8" midpoint= "0.3" taper="0.5" />
+
+  <!-- Left reservoir -->
+  <fuselage ax="-0.265" ay="2.662" az="-1.981" bx="-7.106" by="2.662" bz="-1.648" width="0.6" midpoint= "0.5" taper="0.5" />
+
+  <!-- Right reservoir -->
+  <fuselage ax="-0.265" ay="-2.662" az="-1.981" bx="-7.106" by="-2.662" bz="-1.648" width="0.5" midpoint= "0.5" taper="0.5" />
 
   <wing x="-3.399" y="0.907" z="-1.129"
         chord="9.489"
-        length="4.939"
+        length="6.35"
         taper="0.035"
-        sweep="20"
+        sweep="39.5"
         dihedral="-3"
-        camber="0.126">
-        <stall aoa="21" width="8" peak="1.3"/>
-        <flap0 start="0.0" end="0.5" lift="1.2" drag="1.1"/>
-        <slat aoa="6" start="0.0" end="0.813" lift="1.8" drag="1.7"/>
-        <spoiler start="0.34" end="0.44" lift="-2" drag="15.5"/>
+        camber="0.001">
+        <stall aoa="22" width="1" peak="1.2"/>
+        <flap0 start="0" end="0.813" lift="1.2" drag="1.3"/>
+        <flap1 start="0" end="0.39" lift="1.8" drag="1.7"/>
+        <spoiler start="0.39" end="0.80" lift="1.3" drag="1.3"/>
 
-        <control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
-        <control-input axis="/controls/flight/aileron-trim" control="FLAP0" split="true"/>
-        <control-input axis="/controls/flight/flaps" control="SLAT"/>
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
         <control-input axis="/controls/flight/spoilers" control="SPOILER"/>
 
-        <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
-        <control-output control="SLAT" prop="/surface-positions/slat-pos-norm"/>
+        <control-output control="FLAP0" prop="/surface-positions/slat-pos-norm"/>
+        <control-output control="FLAP1" prop="/surface-positions/flap-pos-norm"/>
         <control-output control="SPOILER" prop="/surface-positions/speedbrake-pos-norm"/>
 
-        <control-speed control="SLAT" transition-time="1.1"/>
-        <control-speed control="FLAP0" transition-time="1"/>
+        <control-speed control="FLAP0" transition-time="1.1"/>
+        <control-speed control="FLAP1" transition-time="1"/>
         <control-speed control="SPOILER" transition-time="1.5"/>
   </wing>
 
-  <hstab x="-7.598" y="0.892" z="-1.118"
-         chord="1.022"
-         length="4.912"
-         taper="1"
-         dihedral="-3">
-         <stall aoa="22" width="13" peak="1.5"/>
-         <flap0 start="0" end="1" lift="1.9" drag="1.4"/>
-         <flap1 start="0.0" end="0.15" lift="0.0" drag="0.8"/>
+  <hstab x="-3.399" y="0.907" z="-1.129"
+        chord="9.489"
+        length="6.35"
+        taper="0.035"
+        sweep="39.5"
+        dihedral="-3">
+        <stall aoa="22" width="1" peak="1.4"/>
+        <flap0 start="0.0" end="0.40" lift="1.4" drag="1.5"/>
 
-         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
-         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+        <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+        <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
 
-         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+        <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
 
-         <control-speed control="FLAP0" transition-time="4"/>
+        <control-speed control="FLAP0" transition-time="4"/>
   </hstab>
 
   <vstab x="-7.486" y="0.0" z="0.141"
          chord="4.998"
-         length="3.096"
+         length="4.4"
          taper="0.28"
-         sweep="35">
-         <stall aoa="27" width="10" peak="1.5"/>
-         <flap0 start="0" end=".8" lift="1.3" drag="1.3"/>
+         sweep="38">
+         <stall aoa="20" width="1" peak="1.2"/>
+         <flap0 start="0.2" end="0.72" lift="1.3" drag="1.4"/>
 
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
@@ -98,7 +107,15 @@
          <control-speed control="FLAP0" transition-time="1"/>
   </vstab>
 
-  <!-- Pratt & Whitney J75  axial-flow -->
+  <!-- Pratt & Whitney J75 axial-flow
+
+       Engines   source            : http://en.wikipedia.org/wiki/Pratt_%26_Whitney_J75
+
+                 name              : Pratt & Whitney J75-P-17
+                 type              : Turbojet afterburning thrust
+                 thrust            : 17200 lb
+                 afterburner       : 24500 lb
+  -->
   <jet x="-3.688" y="0.0" z="-0.749"
        mass="4000"
        thrust="17200"
@@ -157,20 +174,19 @@
         <control-output control="EXTEND" prop="gear/gear[2]/position-norm"/>
   </gear>
 
-
   <!-- Internal Tanks weight total : 4465 kg -> 9843 lb -> 2 x 4921.5 --> 
-  <tank x="-2.5" y="2.3" z="-1.237" jet="true" capacity="4921.5"/>
-  <tank x="-2.5" y="-2.3" z="-1.237" jet="true" capacity="4921.5"/>
+  <tank x="-2.4" y="2.3" z="-1.237" jet="true" capacity="4921.5"/>
+  <tank x="-2.4" y="-2.3" z="-1.237" jet="true" capacity="4921.5"/>
   
   <!-- External Tanks weight total : 2110 kg -> 4651 lb -> 2 x 2325.5 -->
-  <tank x="-3.727" y="2.658" z="-1.817" jet="true" capacity="2325.5"/>
-  <tank x="-3.727" y="-2.658" z="-1.817" jet="true" capacity="2325.5"/>
+  <tank x="-2.727" y="2.658" z="-1.817" jet="true" capacity="2325.5"/>
+  <tank x="-2.727" y="-2.658" z="-1.817" jet="true" capacity="2325.5"/>
 
   <!-- External Tanks empty weight -->
-  <weight x="-3.727" y="2.658" z="-1.817" size="0.28" mass-prop="sim/weight[0]/weight-lb"/>
-  <weight x="-3.727" y="-2.658" z="-1.817" size="0.28" mass-prop="sim/weight[1]/weight-lb"/>
+  <weight x="-2.727" y="2.658" z="-1.817" size="0.28" mass-prop="sim/weight[0]/weight-lb"/>
+  <weight x="-2.727" y="-2.658" z="-1.817" size="0.28" mass-prop="sim/weight[1]/weight-lb"/>
 
-  <!-- CG Théorique x=-3.399 y=0.0 z=-1.129 -->
-  <ballast x="0" y="0" z="0" mass="1000" />
+  <!-- CG Theorique x=-3.399 y=0.0 z=-1.129  -->
+  <ballast x="8.5" y="0" z="-3" mass="2000" />
   
 </airplane>

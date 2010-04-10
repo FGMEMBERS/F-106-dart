@@ -60,7 +60,7 @@
   <animation>
     <type>shader</type>
     <shader>chrome</shader>
-    <texture>glass_shader.png</texture>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>vitreA</object-name>
     <object-name>vitreB</object-name>
   </animation>
@@ -140,13 +140,90 @@
 -->
   </animation>
 
+  <!-- Les flammes -->
+  <model>
+    <path>Aircraft/F-106-dart/Models/effects/flammes/flammes.xml</path>
+    <offsets>
+      <x-m>  9.456 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.430 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Particules OSG -->
+  <!-- Gauche -->
+  <model>
+    <path>Aircraft/F-106-dart/Models/effects/trail.xml</path>
+    <offsets>
+      <x-m>  9.456 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.430 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/F-106-dart/Models/effects/smoke.xml</path>
+    <offsets>
+      <x-m>  9.456 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.430 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/F-106-dart/Models/effects/tiptrail.xml</path>
+    <offsets>
+      <x-m>  7.557 </x-m>
+      <y-m> -5.802 </y-m>
+      <z-m> -1.441 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/F-106-dart/Models/effects/tiptrail.xml</path>
+    <offsets>
+      <x-m>  7.557 </x-m>
+      <y-m>  5.802 </y-m>
+      <z-m> -1.441 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Une ombre pour OSG -->
+  <model>
+    <name>shadowOSG</name>
+    <path>Aircraft/F-106-dart/Models/shadow.xml</path>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>shadowOSG</object-name>
+    <condition>
+      <equals>
+        <property>sim[0]/rendering/shadows-ai</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
   <!-- Interieur -->
   <model>
     <path>Aircraft/F-106-dart/Models/Interior/interior.xml</path>
     <offsets>
-      <x-m> 0.000 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.000 </z-m>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
     </offsets>
   </model>
 
@@ -361,9 +438,9 @@
       <z-m> -1.312 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -378,9 +455,9 @@
       <z-m> -1.312 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -399,9 +476,9 @@
       <z-m> -1.656 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -420,9 +497,9 @@
       <z-m> -1.656 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -464,9 +541,9 @@
       <z-m> -1.686 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
  
@@ -484,9 +561,9 @@
       <z-m> -1.205 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -511,9 +588,9 @@
       <z-m> -1.649 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -532,9 +609,9 @@
       <z-m> -1.068 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -559,9 +636,9 @@
       <z-m> -1.649 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -580,9 +657,9 @@
       <z-m> -1.068 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -600,9 +677,9 @@
       <z-m> -1.205 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -636,9 +713,9 @@
       <entry><ind> 1.00 </ind><dep>  0.11 </dep></entry>
     </interpolation>
     <axis>
-      <x> 0.0 </x>
-      <y> 0.0 </y>
-      <z> 1.0 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
  
@@ -657,9 +734,9 @@
       <z-m> -2.196 </z-m>
     </center>
     <axis>
-      <x> 0.0 </x>
-      <y> 1.0 </y>
-      <z> 0.0 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
  
@@ -678,9 +755,9 @@
       <z-m> -2.588 </z-m>
     </center>
     <axis>
-      <x> 0.0 </x>
-      <y> 1.0 </y>
-      <z> 0.0 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
  
@@ -694,9 +771,9 @@
       <entry><ind> 1.00 </ind><dep>  0.29 </dep></entry>
     </interpolation>
     <axis>
-      <x> 0.0 </x>
-      <y> 0.0 </y>
-      <z> 1.0 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
  
@@ -710,9 +787,9 @@
       <entry><ind> 1.00 </ind><dep>  0.29 </dep></entry>
     </interpolation>
     <axis>
-      <x> 0.0 </x>
-      <y> 0.0 </y>
-      <z> 1.0 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
  
@@ -728,9 +805,9 @@
       <z-m> -2.198 </z-m>
     </center>
     <axis>
-      <x>  0.000 </x>
-      <y>  0.000 </y>
-      <z> -1.000 </z>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
     </axis>
   </animation>
 
@@ -746,9 +823,9 @@
       <z-m> -2.840 </z-m>
     </center>
     <axis>
-      <x>  0.000 </x>
-      <y> -1.000 </y>
-      <z>  0.000 </z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 
@@ -763,9 +840,9 @@
       <z-m> -2.697 </z-m>
     </center>
     <axis>
-      <x>  0.000 </x>
-      <y> -1.000 </y>
-      <z>  0.000 </z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 
@@ -780,9 +857,9 @@
       <z-m> -2.697 </z-m>
     </center>
     <axis>
-      <x>  0.000 </x>
-      <y> -1.000 </y>
-      <z>  0.000 </z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 
@@ -804,10 +881,100 @@
       <z-m>  0.129 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
+  </animation>
+
+  <!-- Ajout des effets lumineux -->
+  <model>
+    <path>Aircraft/F-106-dart/Models/lights/beacon.xml</path>
+    <offsets>
+      <x-m> 1.714 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.191 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/F-106-dart/Models/lights/beacon.xml</path>
+    <offsets>
+      <x-m> -2.509 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.824 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/F-106-dart/Models/lights/RedLight.xml</path>
+    <offsets>
+      <x-m>  7.410 </x-m>
+      <y-m> -5.472 </y-m>
+      <z-m> -1.379 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/F-106-dart/Models/lights/GreenLight.xml</path>
+    <offsets>
+      <x-m>  7.410 </x-m>
+      <y-m>  5.472 </y-m>
+      <z-m> -1.379 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/F-106-dart/Models/lights/StrobeWhite.xml</path>
+    <offsets>
+      <x-m>  7.390 </x-m>
+      <y-m> -5.472 </y-m>
+      <z-m> -1.379 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/F-106-dart/Models/lights/StrobeWhite.xml</path>
+    <offsets>
+      <x-m>  7.390 </x-m>
+      <y-m>  5.472 </y-m>
+      <z-m> -1.379 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Gear light cone -->
+  <model>
+    <name>ConeLeft</name>
+    <path>Aircraft/F-106-dart/Models/lights/light-cone.xml</path>
+    <offsets>
+      <x-m>  3.262 </x-m>
+      <y-m> -2.115 </y-m>
+      <z-m> -1.597 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>ConeRight</name>
+    <path>Aircraft/F-106-dart/Models/lights/light-cone.xml</path>
+    <offsets>
+      <x-m>  3.262 </x-m>
+      <y-m>  2.115 </y-m>
+      <z-m> -1.597 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>ConeLeft</object-name>
+    <object-name>ConeRight</object-name>
+    <condition>
+      <equals>
+        <property>gear/gear[0]/position-norm</property>
+        <value> 1 </value>
+      </equals>
+    </condition>
   </animation>
 
 </PropertyList>
