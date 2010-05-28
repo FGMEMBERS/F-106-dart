@@ -7,8 +7,8 @@
   <animation>
     <!-- Objets opaques -->
     <object-name>interieur</object-name>
-    <object-name>tour</object-name>
-    <object-name>tour2</object-name>
+    <object-name>inttour</object-name>
+    <object-name>inttour2</object-name>
     <object-name>intverriere</object-name>
 
     <!-- Objets transparents -->
@@ -37,11 +37,11 @@
       <x-m> -4.150 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.650 </z-m>
-      <roll-deg>    0.0 </roll-deg>
-      <pitch-deg>   0.0 </pitch-deg>
-      <heading-deg> 0.0 </heading-deg>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
-  </model> -->
+  </model>
 
   <!-- Planche de bord -->
   <model>
@@ -51,12 +51,12 @@
       <y-m>  0.000 </y-m>
       <z-m> -0.780 </z-m>
     </offsets>
-  </model> -->
+  </model>
 
   <!-- Canopy -->
   <animation>
     <name>IntVerriere</name>
-    <object-name>tour2</object-name>
+    <object-name>inttour2</object-name>
     <object-name>intverriere</object-name>
     <object-name>intvitreB</object-name>
   </animation>
@@ -72,10 +72,11 @@
       <z-m>  0.129 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
 </PropertyList>
+

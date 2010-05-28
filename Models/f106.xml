@@ -47,26 +47,15 @@
     <object-name>porteG2</object-name>
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
-    <object-name>intfuselage</object-name>
+    <object-name>supports</object-name>
+    <object-name>reservoirs</object-name>
+    <object-name>plaques</object-name>
+    <object-name>trous</object-name>
 
     <object-name>axeG</object-name>
     <object-name>axeD</object-name>
 
     <!-- Objets transparents -->
-    <object-name>vitreA</object-name>
-    <object-name>vitreB</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitreA</object-name>
-    <object-name>vitreB</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
     <object-name>vitreA</object-name>
     <object-name>vitreB</object-name>
   </animation>
@@ -101,7 +90,14 @@
     <object-name>spoilerG</object-name>
     <object-name>spoilerD</object-name>
     <object-name>porteA</object-name>
-    <object-name>intfuselage</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>supports</object-name>
+    <object-name>reservoirs</object-name>
+    <object-name>plaques</object-name>
+    <object-name>trous</object-name>
 
     <object-name>axeG</object-name>
     <object-name>axeD</object-name>
@@ -138,6 +134,43 @@
       <shininess-prop>shininess</shininess-prop>
     </shininess>
 -->
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/F-106-dart/Models/effects/F106reflect</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>derive</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>direction</object-name>
+    <object-name>verriere</object-name>
+    <object-name>spoilerG</object-name>
+    <object-name>spoilerD</object-name>
+    <object-name>porteA</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>supports</object-name>
+    <object-name>plaques</object-name>
+    <object-name>reservoirs</object-name>
+  </effect>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitreA</object-name>
+    <object-name>vitreB</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitreA</object-name>
+    <object-name>vitreB</object-name>
   </animation>
 
   <!-- Les flammes -->
@@ -226,16 +259,6 @@
       <z-m> 0 </z-m>
     </offsets>
   </model>
-
-  <!-- Flamme
-  <model>
-    <path>Aircraft/F-106-dart/Models/Effects/flamme.xml</path>
-    <offsets>
-      <x-m>  7.025 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.345 </z-m>
-    </offsets>
-  </model> -->
 
   <!-- Gouverne de direction -->
   <animation>
@@ -950,7 +973,8 @@
       <x-m>  3.262 </x-m>
       <y-m> -2.115 </y-m>
       <z-m> -1.597 </z-m>
-      <pitch-deg> -5 </pitch-deg>
+      <heading-deg>  7.500 </heading-deg>
+      <pitch-deg>   -7.000 </pitch-deg>
     </offsets>
   </model>
 
@@ -961,7 +985,8 @@
       <x-m>  3.262 </x-m>
       <y-m>  2.115 </y-m>
       <z-m> -1.597 </z-m>
-      <pitch-deg> -5 </pitch-deg>
+      <heading-deg> -7.500 </heading-deg>
+      <pitch-deg>   -7.000 </pitch-deg>
     </offsets>
   </model>
 
