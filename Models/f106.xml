@@ -137,7 +137,7 @@
   </animation>
 
   <effect>
-    <inherits-from>Aircraft/F-106-dart/Models/effects/F106reflect</inherits-from>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
     <object-name>derive</object-name>
