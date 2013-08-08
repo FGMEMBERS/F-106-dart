@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- Heading Selector Switch -->
-
 <PropertyList>
 
   <path>hss.ac</path>
 
   <animation>
     <object-name>fond</object-name>
-    <object-name>visse1</object-name>
-    <object-name>visse2</object-name>
+    <object-name>visses</object-name>
   </animation>
 
   <!-- SWITCH -->
@@ -19,9 +17,6 @@
       <x-m>  0.003 </x-m>
       <y-m>  0.003 </y-m>
       <z-m> -0.021 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg>   0.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
     </offsets>
   </model>
 

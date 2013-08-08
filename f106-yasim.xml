@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- Convair F 106 Delta Dart : 2009 BARANGER Emmanuel
+                      updated : 2013 BARANGER Emmanuel
 
      Source       : http://en.wikipedia.org/wiki/F-106_Delta_Dart
      
@@ -113,11 +114,12 @@
 
                  name              : Pratt & Whitney J75-P-17
                  type              : Turbojet afterburning thrust
+                 Weight            : 5020 lb (2277 kg)
                  thrust            : 17200 lb
                  afterburner       : 24500 lb
   -->
   <jet x="-3.688" y="0.0" z="-0.749"
-       mass="4000"
+       mass="5020"
        thrust="17200"
        afterburner="24500"
        n1-idle="30"
@@ -127,12 +129,12 @@
        tsfc="0.79">
        <actionpt x="-10.202" y="0.0" z="-0.429"/>
        <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
-       <control-input axis="/controls/engines/engine[0]/reheat" control="REHEAT"/>
+       <control-input axis="/controls/engines/engine[0]/throttle" control="REHEAT" src0="0.85" src1="1.0" dst0="0.0" dst1="1.0"/>
 
        <control-output control="REHEAT" prop="engines/engine[0]/afterburner" />
-
-       <control-speed control="THROTTLE" transition-time="3.0"/>
-       <control-speed control="REHEAT" transition-time="8.0"/>
+       
+       <control-speed control="THROTTLE" transition-time="2"/>
+       <control-speed control="REHEAT" transition-time="2"/>
   </jet>
 
   <!-- gear -->

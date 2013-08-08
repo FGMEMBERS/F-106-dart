@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
+<!-- horizontal situation indicator -->
 <PropertyList>
-  <!-- horizontal situation indicator -->
-  <name>HSI</name>
+  
   <path>hsi.ac</path>
 
   <animation>
     <object-name>HSI-compass-card</object-name>
     <object-name>face</object-name>
+    <object-name>visses</object-name>
     <object-name>bearing-needle-1</object-name>
     <object-name>miles-flag</object-name>
     <object-name>off-flag</object-name>
@@ -34,9 +35,18 @@
   <animation>
     <type>shader</type>
     <shader>chrome</shader>
-    <texture>shader.png</texture>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>vitre</object-name>
   </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitre</object-name>
+  </effect>
 
   <!-- lighting -->
   <animation>
@@ -46,10 +56,10 @@
     <object-name>lubber-line</object-name>
     <object-name>course-knob</object-name>
     <emission> 
-      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
-      <red>0.44</red>
-      <green>0.27</green>
-      <blue>0.15</blue>
+      <red>   0.44 </red>
+      <green> 0.27 </green>
+      <blue>  0.15 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 
@@ -65,11 +75,11 @@
     <object-name>course-drum-1</object-name>
     <object-name>course-drum-2</object-name>
     <object-name>course-drum-3</object-name>
-    <emission> 
-      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
-      <red>0.60</red>
-      <green>0.35</green>
-      <blue>0.23</blue>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 
@@ -84,14 +94,14 @@
     </condition>
     <property>/orientation/heading-magnetic-deg[0]</property>
     <center>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.009</z-m>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000</y-m>
+      <z-m> 0.009</z-m>
     </center>
     <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
  
@@ -106,14 +116,14 @@
     </condition>
     <property>/orientation/heading-magnetic-deg[0]</property>
     <center>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.009</z-m>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.009 </z-m>
     </center>
     <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -128,14 +138,14 @@
     </condition>
     <property>/instrumentation/navcomputer/indicated-bearing</property>
     <center>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.009</z-m>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.009 </z-m>
     </center>
     <axis>
-      <x>-1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 
@@ -167,24 +177,20 @@
     </condition>
   </animation>
 
-<!-- tacan distance digital display -->
+  <!-- tacan distance digital display -->
   <animation>
     <type>textranslate</type>
     <object-name>miles-drum-1</object-name>
     <property>/instrumentation/navcomputer/indicated-distance-nm</property>
     <factor>0.1</factor>
     <offset>-1</offset>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </center>
     <axis>
-      <x>0</x>
-      <y>-1</y>
-      <z>0</z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
+  
   <animation>
     <type>textranslate</type>
     <object-name>miles-drum-2</object-name>
@@ -193,17 +199,13 @@
     <offset>-10</offset>
     <step>10</step>
     <scroll>0.5</scroll>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </center>
     <axis>
-      <x>0</x>
-      <y>-1</y>
-      <z>0</z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
+  
   <animation>
     <type>textranslate</type>
     <object-name>miles-drum-3</object-name>
@@ -212,36 +214,27 @@
     <offset>-100</offset>
     <step>100</step>
     <scroll>0.5</scroll>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </center>
     <axis>
-      <x>0</x>
-      <y>-1</y>
-      <z>0</z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 
-<!-- course digital display -->
+  <!-- course digital display -->
   <animation>
     <type>textranslate</type>
     <object-name>course-drum-1</object-name>
     <property>/instrumentation/nav/radials/selected-deg</property>
     <factor>0.1</factor>
     <offset>-1</offset>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </center>
     <axis>
-      <x>0</x>
-      <y>-1</y>
-      <z>0</z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
+  
   <animation>
     <type>textranslate</type>
     <object-name>course-drum-2</object-name>
@@ -250,17 +243,13 @@
     <offset>-10</offset>
     <step>10</step>
     <scroll>0.5</scroll>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </center>
     <axis>
-      <x>0</x>
-      <y>-1</y>
-      <z>0</z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
+  
   <animation>
     <type>textranslate</type>
     <object-name>course-drum-3</object-name>
@@ -269,15 +258,10 @@
     <offset>-100</offset>
     <step>100</step>
     <scroll>0.5</scroll>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </center>
     <axis>
-      <x>0</x>
-      <y>-1</y>
-      <z>0</z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 

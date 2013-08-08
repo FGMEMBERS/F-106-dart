@@ -1,2 +1,2 @@
-aircraft.livery.init("Aircraft/JAS39-Gripen/Models/Liveries");
+aircraft.livery.init("Aircraft/F-106-dart/Models/Liveries");
 

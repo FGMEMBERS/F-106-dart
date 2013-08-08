@@ -7,9 +7,23 @@
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/F-106-dart/Models/Liveries", 10);
+      
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
     </load>
+
     <unload>
       livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
     </unload>
   </nasal>
 
@@ -18,22 +32,6 @@
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
     <object-name>derive</object-name>
-    <object-name>sortiemoteur</object-name>
-    <object-name>axeAH</object-name>
-    <object-name>axeAB</object-name>
-    <object-name>articuleH</object-name>
-    <object-name>articuleB</object-name>
-    <object-name>roueA</object-name>
-    <object-name>axeGH</object-name>
-    <object-name>axeGB</object-name>
-    <object-name>articuleGH</object-name>
-    <object-name>articuleGB</object-name>
-    <object-name>roueG</object-name>
-    <object-name>axeDH</object-name>
-    <object-name>axeDB</object-name>
-    <object-name>articuleDH</object-name>
-    <object-name>articuleDB</object-name>
-    <object-name>roueD</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
     <object-name>voletG</object-name>
@@ -50,11 +48,27 @@
     <object-name>supports</object-name>
     <object-name>reservoirs</object-name>
     <object-name>plaques</object-name>
-    <object-name>trous</object-name>
 
+    <object-name>trous</object-name>
     <object-name>axeG</object-name>
     <object-name>axeD</object-name>
-
+    <object-name>sortiemoteur</object-name>
+    <object-name>axeAH</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>articuleH</object-name>
+    <object-name>articuleB</object-name>
+    <object-name>roueA</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>articuleGH</object-name>
+    <object-name>articuleGB</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>articuleDH</object-name>
+    <object-name>articuleDB</object-name>
+    <object-name>roueD</object-name>
+    
     <!-- Objets transparents -->
     <object-name>vitreA</object-name>
     <object-name>vitreB</object-name>
@@ -65,22 +79,6 @@
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
     <object-name>derive</object-name>
-    <object-name>sortiemoteur</object-name>
-    <object-name>axeAH</object-name>
-    <object-name>axeAB</object-name>
-    <object-name>articuleH</object-name>
-    <object-name>articuleB</object-name>
-    <object-name>roueA</object-name>
-    <object-name>axeGH</object-name>
-    <object-name>axeGB</object-name>
-    <object-name>articuleGH</object-name>
-    <object-name>articuleGB</object-name>
-    <object-name>roueG</object-name>
-    <object-name>axeDH</object-name>
-    <object-name>axeDB</object-name>
-    <object-name>articuleDH</object-name>
-    <object-name>articuleDB</object-name>
-    <object-name>roueD</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
     <object-name>voletG</object-name>
@@ -97,47 +95,47 @@
     <object-name>supports</object-name>
     <object-name>reservoirs</object-name>
     <object-name>plaques</object-name>
-    <object-name>trous</object-name>
 
+    <object-name>trous</object-name>
     <object-name>axeG</object-name>
     <object-name>axeD</object-name>
+    <object-name>sortiemoteur</object-name>
+    <object-name>axeAH</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>articuleH</object-name>
+    <object-name>articuleB</object-name>
+    <object-name>roueA</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>articuleGH</object-name>
+    <object-name>articuleGB</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>articuleDH</object-name>
+    <object-name>articuleDB</object-name>
+    <object-name>roueD</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
     <object-name>derive</object-name>
@@ -155,8 +153,34 @@
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
     <object-name>supports</object-name>
-    <object-name>plaques</object-name>
     <object-name>reservoirs</object-name>
+    <object-name>plaques</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>derive</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>direction</object-name>
+    <object-name>verriere</object-name>
+    <object-name>spoilerG</object-name>
+    <object-name>spoilerD</object-name>
+    <object-name>porteA</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>supports</object-name>
+    <object-name>reservoirs</object-name>
+    <object-name>plaques</object-name>
   </effect>
 
   <animation>
@@ -173,9 +197,41 @@
     <object-name>vitreB</object-name>
   </animation>
 
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitreA</object-name>
+    <object-name>vitreB</object-name>
+  </effect>
+
+  <!-- Une ombre pour OSG -->
+  <model>
+    <path>Aircraft/F-106-dart/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.0 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -2.9 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Interieur -->
+  <model>
+    <name>Interieur</name>
+    <path>Aircraft/F-106-dart/Models/Interior/interior.xml</path>
+  </model>
+
+  <!-- For Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>Interieur</object-name>
+  </animation>
+
   <!-- Les flammes -->
   <model>
-    <path>Aircraft/F-106-dart/Models/effects/flammes/flammes.xml</path>
+    <path>Aircraft/F-106-dart/Models/effects/flammes/combustion.xml</path>
     <offsets>
       <x-m>  9.456 </x-m>
       <y-m>  0.000 </y-m>
@@ -186,77 +242,69 @@
   <!-- Particules OSG -->
   <!-- Gauche -->
   <model>
-    <path>Aircraft/F-106-dart/Models/effects/trail.xml</path>
+    <path>Aircraft/F-106-dart/Models/effects/trail/trail.xml</path>
     <offsets>
       <x-m>  9.456 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.430 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/F-106-dart/Models/effects/smoke.xml</path>
+    <path>Aircraft/F-106-dart/Models/effects/smoke/smoke.xml</path>
     <offsets>
       <x-m>  9.456 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.430 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/F-106-dart/Models/effects/tiptrail.xml</path>
+    <path>Aircraft/F-106-dart/Models/effects/tiptrail/tiptrail.xml</path>
     <offsets>
       <x-m>  7.557 </x-m>
       <y-m> -5.802 </y-m>
       <z-m> -1.441 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/F-106-dart/Models/effects/tiptrail.xml</path>
+    <path>Aircraft/F-106-dart/Models/effects/tiptrail/tiptrail.xml</path>
     <offsets>
       <x-m>  7.557 </x-m>
       <y-m>  5.802 </y-m>
       <z-m> -1.441 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
-  <!-- Une ombre pour OSG -->
+  <!-- Effets sur le sol -->
+  <!-- Roue avant -->
   <model>
-    <name>shadowOSG</name>
-    <path>Aircraft/F-106-dart/Models/shadow.xml</path>
+    <path>Aircraft/F-106-dart/Models/effects/ground/ground0.xml</path>   
+    <offsets>
+      <x-m> -4.028 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -3.063 </z-m>
+    </offsets>
   </model>
 
-  <animation>
-    <type>select</type>
-    <object-name>shadowOSG</object-name>
-    <condition>
-      <equals>
-        <property>sim[0]/rendering/shadows-ai</property>
-        <value>true</value>
-      </equals>
-    </condition>
-  </animation>
-
-  <!-- Interieur -->
+  <!-- Roue gauche -->
   <model>
-    <path>Aircraft/F-106-dart/Models/Interior/interior.xml</path>
+    <path>Aircraft/F-106-dart/Models/effects/ground/ground1.xml</path>
     <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
+      <x-m>  3.323 </x-m>
+      <y-m> -2.169 </y-m>
+      <z-m> -3.062 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue droite -->
+  <model>
+    <path>Aircraft/F-106-dart/Models/effects/ground/ground2.xml</path>
+    <offsets>
+      <x-m>  3.323 </x-m>
+      <y-m>  2.169 </y-m>
+      <z-m> -3.062 </z-m>
     </offsets>
   </model>
 
@@ -424,7 +472,7 @@
       <x1-m> 9.065 </x1-m>
       <y1-m> 0.106 </y1-m>
       <z1-m> 0.135 </z1-m>
-      <x2-m> 9.315 </x2-m>
+      <x2-m> 9.315 </x2-m>flammes
       <y2-m> 0.081 </y2-m>
       <z2-m> 0.804 </z2-m>
     </axis>
@@ -894,9 +942,23 @@
   </animation>
   
   <animation>
+    <type>pick</type>
+    <object-name>VerriereComplete</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <type>rotate</type>
     <object-name>VerriereComplete</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> 35 </factor>
     <center>
       <x-m> -2.940 </x-m>
@@ -939,6 +1001,15 @@
   </model>
 
   <model>
+    <path>Aircraft/F-106-dart/Models/lights/StrobeLight.xml</path>
+    <offsets>
+      <x-m>  7.390 </x-m>
+      <y-m> -5.472 </y-m>
+      <z-m> -1.379 </z-m>
+    </offsets>
+  </model>
+
+  <model>
     <path>Aircraft/F-106-dart/Models/lights/GreenLight.xml</path>
     <offsets>
       <x-m>  7.410 </x-m>
@@ -948,16 +1019,7 @@
   </model>
 
   <model>
-    <path>Aircraft/F-106-dart/Models/lights/StrobeWhite.xml</path>
-    <offsets>
-      <x-m>  7.390 </x-m>
-      <y-m> -5.472 </y-m>
-      <z-m> -1.379 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/F-106-dart/Models/lights/StrobeWhite.xml</path>
+    <path>Aircraft/F-106-dart/Models/lights/StrobeLight.xml</path>
     <offsets>
       <x-m>  7.390 </x-m>
       <y-m>  5.472 </y-m>
@@ -965,7 +1027,7 @@
     </offsets>
   </model>
 
-  <!-- Gear light cone -->
+  <!-- Gear light cone
   <model>
     <name>ConeLeft</name>
     <path>Aircraft/F-106-dart/Models/lights/light-cone.xml</path>
@@ -973,8 +1035,8 @@
       <x-m>  3.262 </x-m>
       <y-m> -2.115 </y-m>
       <z-m> -1.597 </z-m>
-      <heading-deg>  7.500 </heading-deg>
-      <pitch-deg>   -7.000 </pitch-deg>
+      <heading-deg>  7.5 </heading-deg>
+      <pitch-deg>   -7.0 </pitch-deg>
     </offsets>
   </model>
 
@@ -985,21 +1047,9 @@
       <x-m>  3.262 </x-m>
       <y-m>  2.115 </y-m>
       <z-m> -1.597 </z-m>
-      <heading-deg> -7.500 </heading-deg>
-      <pitch-deg>   -7.000 </pitch-deg>
+      <heading-deg> -7.5 </heading-deg>
+      <pitch-deg>   -7.0 </pitch-deg>
     </offsets>
-  </model>
-
-  <animation>
-    <type>select</type>
-    <object-name>ConeLeft</object-name>
-    <object-name>ConeRight</object-name>
-    <condition>
-      <equals>
-        <property>gear/gear[0]/position-norm</property>
-        <value> 1 </value>
-      </equals>
-    </condition>
-  </animation>
+    </model> -->
 
 </PropertyList>

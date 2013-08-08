@@ -1,17 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-************************************************************************
-Convair F106 Delta Dart simulation config.
-
-2009-01-03 BARANGER Emmanuel
-************************************************************************
--->
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList include="f106-base.xml">
 
   <sim>
 
     <description>Convair Delta Dart (YASim)</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
     <flight-model>yasim</flight-model>
     <aero>f106-yasim</aero>
 

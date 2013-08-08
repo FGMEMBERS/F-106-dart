@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- Speed/Mach Indicator -->
-
 <PropertyList>
 
   <path>asi.ac</path>
@@ -9,10 +8,7 @@
   <animation>
     <object-name>fond</object-name>
     <object-name>face</object-name>
-    <object-name>visse1</object-name>
-    <object-name>visse2</object-name>
-    <object-name>visse3</object-name>
-    <object-name>visse4</object-name>
+    <object-name>visses</object-name>
     <object-name>indalt</object-name>
     <object-name>indmach</object-name>
     <object-name>indknots</object-name>
@@ -38,9 +34,18 @@
   <animation>
     <type>shader</type>
     <shader>chrome</shader>
-    <texture>shader.png</texture>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>vitre</object-name>
   </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitre</object-name>
+  </effect>
 
   <animation>
     <type>material</type>
@@ -59,10 +64,10 @@
     <object-name>g2</object-name>
     <object-name>g3</object-name>
     <emission>
-      <red>   0.030 </red>
-      <green> 0.015 </green>
-      <blue>  0.005 </blue>
-      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 
@@ -80,11 +85,6 @@
       <y> 1 </y>
       <z> 0 </z>
     </axis>
-    <center>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </center>
   </animation>
  
   <animation>
@@ -101,11 +101,6 @@
       <y> 1 </y>
       <z> 0 </z>
     </axis>
-    <center>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </center>
   </animation>
 
   <animation>
@@ -154,9 +149,6 @@
       <x-m>  0.004 </x-m>
       <y-m> -0.007 </y-m>
       <z-m> -0.119 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg>   0.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
     </offsets>
   </model>
 
@@ -166,9 +158,6 @@
       <x-m>  0.004 </x-m>
       <y-m>  0.031 </y-m>
       <z-m> -0.119 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg>   0.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
     </offsets>
   </model>
 
