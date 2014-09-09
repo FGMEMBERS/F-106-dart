@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Bearing Selector Switch -->
+<PropertyList>
+
+  <path>bss.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>visses</object-name>
+    <object-name>bouton</object-name>
+  </animation>
+
+</PropertyList>

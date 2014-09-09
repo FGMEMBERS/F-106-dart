@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Master Warning - Fire -->
+<PropertyList>
+
+  <path>mw-f.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>visses</object-name>
+  </animation>
+
+  <!-- Engine Fire Warning Test Switch -->
+  <model>
+    <path>Aircraft/F-106-dart/Models/Interior/Panel/Instruments/divers/switch.xml</path>
+    <offsets>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.008 </y-m>
+      <z-m>  0.011 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Variable Ramp Warning Light -->
+  <model>
+    <path>Aircraft/F-106-dart/Models/Interior/Panel/Instruments/divers/greenalert.xml</path>
+    <offsets>
+      <x-m>  0.002 </x-m>
+      <y-m> -0.101 </y-m>
+      <z-m> -0.009 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
