@@ -14,6 +14,21 @@
       <cockpit type="int"> 4 </cockpit>
       <model type="int">   4 </model>
     </rating>
+
+    <tags>
+      <tag>fighter</tag>
+      <tag>1950s</tag>
+      <tag>1960s</tag>
+      <tag>1970s</tag>
+      <tag>1980s</tag>
+      <tag>coldwar</tag>
+      <tag>delta</tag>
+      <tag>retractable-gear</tag>
+      <tag>supersonic</tag>
+      <tag>afterburner</tag>
+      <tag>jet</tag>
+      <tag>single-engine</tag>
+    </tags>
     
   </sim>
 
